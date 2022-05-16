@@ -56,4 +56,16 @@ public class AddBookingResponse {
     public void setPerson(String person) {
         this.person = person;
     }
+
+    @Override
+    public String toString() {
+        return "AddBookingResponse{" +
+                "email='" + email + '\'' +
+                ", nameHotel='" + nameHotel + '\'' +
+                ", dateFrom='" + dateFrom + '\'' +
+                ", dateTo='" + dateTo + '\'' +
+                ", person='" + person + '\'' +
+                ", id='" + id + '\'' +
+                '}';
+    }
 }

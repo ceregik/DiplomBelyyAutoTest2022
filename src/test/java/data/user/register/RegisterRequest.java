@@ -10,6 +10,19 @@ public class RegisterRequest {
     private String email;
     private String password;
 
+    @Override
+    public String toString() {
+        return "RegisterRequest{" +
+                "age=" + age +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", male='" + male + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
     public String getPassword() {
         return password;
     }

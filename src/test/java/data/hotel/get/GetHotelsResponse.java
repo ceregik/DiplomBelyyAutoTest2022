@@ -16,4 +16,11 @@ public class GetHotelsResponse {
     public GetHotelsResponse(List<Hotel> hotels) {
         this.hotels = hotels;
     }
+
+    @Override
+    public String toString() {
+        return "GetHotelsResponse{" +
+                "hotels=" + hotels +
+                '}';
+    }
 }

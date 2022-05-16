@@ -47,4 +47,15 @@ public class AddBookingRequest {
     public void setPerson(String person) {
         this.person = person;
     }
+
+    @Override
+    public String toString() {
+        return "AddBookingRequest{" +
+                "nameHotel='" + nameHotel + '\'' +
+                ", dateFrom='" + dateFrom + '\'' +
+                ", dateTo='" + dateTo + '\'' +
+                ", person='" + person + '\'' +
+                ", token='" + token + '\'' +
+                '}';
+    }
 }

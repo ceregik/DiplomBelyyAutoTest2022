@@ -17,4 +17,11 @@ public class ResponseGet {
     public void setTime(Date time) {
         this.time = time;
     }
+
+    @Override
+    public String toString() {
+        return "ResponseGet{" +
+                "time=" + time +
+                '}';
+    }
 }

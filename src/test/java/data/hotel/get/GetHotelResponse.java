@@ -47,4 +47,15 @@ public class GetHotelResponse {
     public void setCost(Long cost) {
         this.cost = cost;
     }
+
+    @Override
+    public String toString() {
+        return "GetHotelResponse{" +
+                "name='" + name + '\'' +
+                ", city='" + city + '\'' +
+                ", address='" + address + '\'' +
+                ", description='" + description + '\'' +
+                ", cost=" + cost +
+                '}';
+    }
 }

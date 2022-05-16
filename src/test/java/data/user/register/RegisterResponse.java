@@ -10,6 +10,19 @@ public class RegisterResponse {
     private String email;
     private String token;
 
+    @Override
+    public String toString() {
+        return "RegisterResponse{" +
+                "age=" + age +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", male='" + male + '\'' +
+                ", email='" + email + '\'' +
+                ", token='" + token + '\'' +
+                '}';
+    }
+
     public RegisterResponse(Integer age, String firstName, String lastName, String phoneNumber, String male, String email, String token) {
         this.age = age;
         this.firstName = firstName;

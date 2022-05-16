@@ -65,4 +65,17 @@ public class UserResponse {
     public void setMale(String male) {
         this.male = male;
     }
+
+    @Override
+    public String toString() {
+        return "UserResponse{" +
+                "age=" + age +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", male='" + male + '\'' +
+                ", email='" + email + '\'' +
+                ", token='" + token + '\'' +
+                '}';
+    }
 }

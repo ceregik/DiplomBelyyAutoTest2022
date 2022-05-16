@@ -11,6 +11,17 @@ public class UpdateResponse {
     public UpdateResponse() {
     }
 
+    @Override
+    public String toString() {
+        return "UpdateResponse{" +
+                "age=" + age +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", male='" + male + '\'' +
+                '}';
+    }
+
     public Integer getAge() {
         return age;
     }

@@ -1,5 +1,6 @@
 package helpers;
 
+import api.HotelApi;
 import api.UserApi;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.javafaker.Faker;
@@ -45,6 +46,17 @@ public class DataHelper {
         BaseResponse responseDelete = null;
         try {
             responseDelete = UserApi.deleteUser(email + " " + adminToken);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        assert responseDelete != null;
+        Assert.assertEquals(responseDelete.getCode(), 100, "Созданный пользователь не удалился");
+    }
+
+    public static void deleteHotelWithAdminToken(String name) {
+        BaseResponse responseDelete = null;
+        try {
+            responseDelete = HotelApi.deleteHotel(name + " " + adminToken);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }

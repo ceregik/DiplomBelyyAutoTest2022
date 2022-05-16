@@ -47,4 +47,15 @@ public class Hotel {
     public void setCost(Long cost) {
         this.cost = cost;
     }
+
+    @Override
+    public String toString() {
+        return "Hotel{" +
+                "name='" + name + '\'' +
+                ", city='" + city + '\'' +
+                ", address='" + address + '\'' +
+                ", description='" + description + '\'' +
+                ", cost=" + cost +
+                '}';
+    }
 }

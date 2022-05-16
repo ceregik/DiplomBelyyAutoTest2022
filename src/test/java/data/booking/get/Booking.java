@@ -64,4 +64,17 @@ public class Booking {
     public void setPerson(String person) {
         this.person = person;
     }
+
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "email='" + email + '\'' +
+                ", nameHotel='" + nameHotel + '\'' +
+                ", dateFrom='" + dateFrom + '\'' +
+                ", dateTo='" + dateTo + '\'' +
+                ", person='" + person + '\'' +
+                ", token='" + token + '\'' +
+                ", id='" + id + '\'' +
+                '}';
+    }
 }

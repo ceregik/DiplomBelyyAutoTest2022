@@ -26,7 +26,7 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
-public class AuthTests extends BaseTest{
+public class AuthTest extends BaseTest{
 
     @Epic(value = "Авторизация")
     @Feature(value = "Регистрация пользователя")

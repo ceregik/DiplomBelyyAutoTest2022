@@ -2,7 +2,6 @@ package api;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import data.BaseResponse;
 import data.Error;
 import data.user.delete.DeleteResponse;
@@ -13,10 +12,13 @@ import data.user.put.UpdateRequest;
 import data.user.put.UpdateResponse;
 import data.user.register.RegisterRequest;
 import data.user.register.RegisterResponse;
+import io.qameta.allure.Step;
+
 import static io.restassured.RestAssured.given;
 
 public class UserApi extends BaseApi{
 
+    @Step("Регистрация пользователя")
     public static BaseResponse createUser(RegisterRequest registerRequest) throws JsonProcessingException {
         String response = given()
                 .body(registerRequest)
@@ -34,6 +36,7 @@ public class UserApi extends BaseApi{
         }
     }
 
+    @Step("Обновление пользователя")
     public static BaseResponse updateUser(UpdateRequest updateRequest) throws JsonProcessingException {
         String response = given()
                 .body(updateRequest)
@@ -51,6 +54,7 @@ public class UserApi extends BaseApi{
         }
     }
 
+    @Step("Авторизация пользователя")
     public static BaseResponse loginUser(LoginRequest loginRequest) throws JsonProcessingException {
         String response = given()
                 .body(loginRequest)
@@ -68,6 +72,7 @@ public class UserApi extends BaseApi{
         }
     }
 
+    @Step("Удаление пользователя")
     public static BaseResponse deleteUser(String token) throws JsonProcessingException {
         String response = given()
                 .when()
@@ -84,6 +89,8 @@ public class UserApi extends BaseApi{
             });
         }
     }
+
+    @Step("Получение пользователя")
     public static BaseResponse getUser(String token) throws JsonProcessingException {
         String response = given()
                 .when()

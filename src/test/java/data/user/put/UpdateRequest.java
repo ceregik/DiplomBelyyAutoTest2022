@@ -10,6 +10,19 @@ public class UpdateRequest {
     private String password;
     private String token;
 
+    @Override
+    public String toString() {
+        return "UpdateRequest{" +
+                "age=" + age +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", male='" + male + '\'' +
+                ", password='" + password + '\'' +
+                ", token='" + token + '\'' +
+                '}';
+    }
+
     public String getToken() {
         return token;
     }

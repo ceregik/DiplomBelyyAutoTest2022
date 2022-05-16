@@ -47,4 +47,15 @@ public class PutHotelResponse {
     public void setCost(Integer cost) {
         this.cost = cost;
     }
+
+    @Override
+    public String toString() {
+        return "PutHotelResponse{" +
+                "name='" + name + '\'' +
+                ", city='" + city + '\'' +
+                ", address='" + address + '\'' +
+                ", description='" + description + '\'' +
+                ", cost=" + cost +
+                '}';
+    }
 }

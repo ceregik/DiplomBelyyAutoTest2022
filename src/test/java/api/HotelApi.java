@@ -17,16 +17,18 @@ import data.user.put.UpdateRequest;
 import data.user.put.UpdateResponse;
 import data.user.register.RegisterRequest;
 import data.user.register.RegisterResponse;
+import io.qameta.allure.Step;
 
 import static io.restassured.RestAssured.given;
 
 public class HotelApi extends BaseApi{
 
-    public static BaseResponse createHotel(AddHotelRequest addHotelRequest) throws JsonProcessingException {
+    @Step("Создание отеля")
+    public static BaseResponse createHotel(AddHotelRequest addHotelRequest, String token) throws JsonProcessingException {
         String response = given()
                 .body(addHotelRequest)
                 .when()
-                .post("hotel")
+                .post("hotel?token=" + token)
                 .then()
                 .log().body()
                 .extract().body().asString();
@@ -39,6 +41,7 @@ public class HotelApi extends BaseApi{
         }
     }
 
+    @Step("Обновление отеля")
     public static BaseResponse updateHotel(PutHotelRequest putHotelRequest) throws JsonProcessingException {
         String response = given()
                 .body(putHotelRequest)
@@ -56,10 +59,11 @@ public class HotelApi extends BaseApi{
         }
     }
 
+    @Step("Удаление отеля")
     public static BaseResponse deleteHotel(String token) throws JsonProcessingException {
         String response = given()
                 .when()
-                .delete("hotel" + "?token=" + token)
+                .delete("hotel?token=" + token)
                 .then()
                 .log().body()
                 .statusCode(200)
@@ -73,10 +77,11 @@ public class HotelApi extends BaseApi{
         }
     }
 
-    public static BaseResponse getHotel(String token) throws JsonProcessingException {
+    @Step("получение отеля")
+    public static BaseResponse getHotel(String name) throws JsonProcessingException {
         String response = given()
                 .when()
-                .get("hotel")
+                .get("hotel?name="+name)
                 .then()
                 .log().body()
                 .statusCode(200)
@@ -90,6 +95,7 @@ public class HotelApi extends BaseApi{
         }
     }
 
+    @Step("Полечение отелей")
     public static BaseResponse getHotels() throws JsonProcessingException {
         String response = given()
                 .when()

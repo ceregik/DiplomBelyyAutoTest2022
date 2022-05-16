@@ -17,4 +17,11 @@ public class GetBookingsResponse {
     public void setBookings(List<Booking> bookings) {
         this.bookings = bookings;
     }
+
+    @Override
+    public String toString() {
+        return "GetBookingsResponse{" +
+                "bookings=" + bookings +
+                '}';
+    }
 }
